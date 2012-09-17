@@ -9,8 +9,9 @@
     <!-- Default values -->
 
     <meta name="text:Disqus Shortname" content="" />
+    <meta name="if:Use multi column layout" content="0"/> 
 
-    <link type="text/css" rel="stylesheet" media="all" href="http://www.columbia.edu/cu/arch/tumblr/gsappwork.css">
+    <link type="text/css" rel="stylesheet" media="all" href="http://www.columbia.edu/cu/arch/tumblr/fall2012/css/gsappwork.css">
 
     <style>
     /* Styling based on Tumblr customizable inputs */
@@ -62,11 +63,32 @@
     </style> 
     
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-	<script type="text/javascript" src="http://www.columbia.edu/cu/arch/tumblr/arrow_top.js"></script>
-	<script type="text/javascript" src="http://www.columbia.edu/cu/arch/tumblr/truncator.js"></script>
-	<script type="text/javascript" src="http://www.columbia.edu/cu/arch/tumblr/autopager.js"></script>
-	<script type="text/javascript" src="http://www.columbia.edu/cu/arch/tumblr/gsappwork.js"></script>
+    {block:IfUseMultiColumnLayout}
+    	<script type="text/javascript" src="http://www.columbia.edu/cu/arch/tumblr/fall2012/js/jquery.masonry.min.js"></script>
+    {/block:IfUseMultiColumnLayout}
+	<script type="text/javascript" src="http://www.columbia.edu/cu/arch/tumblr/fall2012/js/arrow_top.js"></script>
+	<script type="text/javascript" src="http://www.columbia.edu/cu/arch/tumblr/fall2012/js/truncator.js"></script>
+	<script type="text/javascript" src="http://www.columbia.edu/cu/arch/tumblr/fall2012/js/autopager.js"></script>
+	<script type="text/javascript" src="http://www.columbia.edu/cu/arch/tumblr/fall2012/js/gsappwork.js"></script>
 	
+	{block:IfUseMultiColumnLayout}
+	<script type="text/javascript">
+		$(document).ready(function() {
+			var $container = $('#main .brickwall');
+			$container.imagesLoaded( function(){
+				$container.masonry({
+					itemSelector: '.postwrapper',
+					columnWidth: 250,
+					isAnimated: false,
+					gutterWidth: 40,
+					isFitWidth: true
+				});
+			});
+		});
+	</script>
+
+	{/block:IfUseMultiColumnLayout}
+
   </head> 
   
 
@@ -119,7 +141,7 @@
     
     
 
-<div class = "autopagerize_page_element" >
+<div class = "autopagerize_page_element{block:IfUseMultiColumnLayout} brickwall{/block:IfUseMultiColumnLayout}" >
 
 
 
@@ -188,7 +210,12 @@
 		<div class="post photoset">
 			<div class="realpost">
 			{block:Photos} 
-			<img src="{PhotoURL-HighRes}" width="675" />
+				{block:IfUseMultiColumnLayout}
+					<img src="{PhotoURL-250}" width="250" />
+				{/block:IfUseMultiColumnLayout}
+				{block:IfNotUseMultiColumnLayout}
+					<img src="{PhotoURL-HighRes}" width="675" />
+				{/block:IfNotUseMultiColumnLayout}
 			{/block:Photos}
 			
 			</div>	
@@ -220,7 +247,12 @@
 		<div class="post photo">
 		  <div class="realpost">
 			{LinkOpenTag}
-			<img src="{PhotoUrl-HighRes}" width="675" alt="{PhotoAlt}"/>
+				{block:IfUseMultiColumnLayout}
+					<img src="{PhotoURL-250}" width="250" alt="{PhotoAlt}"/>
+				{/block:IfUseMultiColumnLayout}
+				{block:IfNotUseMultiColumnLayout}
+					<img src="{PhotoURL-HighRes}" width="675" alt="{PhotoAlt}"/>
+				{/block:IfNotUseMultiColumnLayout}
 			{LinkCloseTag}
 		  </div>
 		</div>{/block:Photo}
