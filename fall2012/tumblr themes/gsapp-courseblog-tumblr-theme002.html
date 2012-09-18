@@ -80,7 +80,7 @@
 					itemSelector: '.postwrapper',
 					columnWidth: 250,
 					isAnimated: false,
-					gutterWidth: 40,
+					gutterWidth: 20,
 					isFitWidth: true
 				});
 			});
@@ -141,7 +141,7 @@
     
     
 
-<div class = "autopagerize_page_element{block:IfUseMultiColumnLayout} brickwall{/block:IfUseMultiColumnLayout}" >
+<div class = "autopagerize_page_element{block:IfUseMultiColumnLayout}{block:IndexPage} brickwall{/block:IndexPage}{/block:IfUseMultiColumnLayout}" >
 
 
 
@@ -209,17 +209,13 @@
 	   {block:Photoset}
 		<div class="post photoset">
 			<div class="realpost">
-			{block:Photos} 
 				{block:IfUseMultiColumnLayout}
-					<img src="{PhotoURL-250}" width="250" />
+					{Photoset-250}
 				{/block:IfUseMultiColumnLayout}
 				{block:IfNotUseMultiColumnLayout}
-					<img src="{PhotoURL-HighRes}" width="675" />
+					{Photoset-700}
 				{/block:IfNotUseMultiColumnLayout}
-			{/block:Photos}
-			
 			</div>	
-
 		</div>
 		{/block:Photoset}    
 		
@@ -243,7 +239,7 @@
 		
 		
 		
-		{block:Photo} {block:HighRes} {/block:HighRes}
+		{block:Photo}
 		<div class="post photo">
 		  <div class="realpost">
 			{LinkOpenTag}
@@ -251,7 +247,7 @@
 					<img src="{PhotoURL-250}" width="250" alt="{PhotoAlt}"/>
 				{/block:IfUseMultiColumnLayout}
 				{block:IfNotUseMultiColumnLayout}
-					<img src="{PhotoURL-HighRes}" width="675" alt="{PhotoAlt}"/>
+					<img src="{PhotoURL-HighRes}" width="500" alt="{PhotoAlt}"/>
 				{/block:IfNotUseMultiColumnLayout}
 			{LinkCloseTag}
 		  </div>

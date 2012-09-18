@@ -26,6 +26,13 @@ body {
     	font-size: 14px; 
     	font-weight: bold;
     }
+
+    .brickwall h2{
+      font-size: 21px;
+      line-height: 25px;
+    }
+
+
     
     
     
@@ -285,11 +292,20 @@ html[xmlns] .clearfix {
  
     .realpost {
       float: left;
-      width: 675px;
+      width: 700px;
       max-width: 100%;
       margin-right:25px;
       padding-top: 0; 
       margin-top: 0;
+      font: bold 21px/25px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+
+    .brickwall .realpost,
+    .brickwall .sidebar{
+      font: bold 14px/17px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+
+    .postpage .brickwall .realpost{
       font: bold 21px/25px 'Helvetica Neue', Helvetica, Arial, sans-serif;
     }
     
@@ -364,5 +380,7 @@ html[xmlns] .clearfix {
   float:left;
 }
 
-
+.brickwall .photoset img{
+  width:100%;
+}
 
