@@ -67,6 +67,13 @@ body {
     color: inherit; 
     border-bottom: 1px solid;
     }
+
+    a.read-more{
+      border-bottom:1px solid;
+    }
+    a.read-more:hover{
+      border:none;
+    }
     /* 858585 */
     a img { 
     outline: 0; 
@@ -247,12 +254,16 @@ html[xmlns] .clearfix {
     a.TokyoLab {color: #FF555A !important}
     a.Tokyo-Lab {color: #FF555A !important}
      
-	.sidebar {
+	 .sidebar {
     	float: left;
     	width: 250px;
       font: bold 13px/17px 'Helvetica Neue', Helvetica, Arial, sans-serif;
       margin-bottom: 7em;
       margin-top: 10px;
+    }
+
+    .brickwall .sidebar{
+      margin-bottom:60px;
     }
 
     .sidebar blockquote{
@@ -270,6 +281,9 @@ html[xmlns] .clearfix {
     	font-weight: bold
     }
     
+    .hidden-permalink{
+      display: none;
+    }
 
     .permalink {
       font-size: 12px;

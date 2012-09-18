@@ -21,10 +21,11 @@
       var full_node = $(this).hide();
 
       truncated_node.insertAfter(full_node);
+
+      var permalink = $(this).closest('.postwrapper').children('.hidden-permalink').attr('href');
       
-      var permalink = $(this).closest('.sidebar').find('h3 a').attr('href');
 	  
-      findNodeForMore(truncated_node).append('...<br><br><a class="continue-reading" href="'+permalink+'">Continue Reading</a>');
+      findNodeForMore(truncated_node).append('...<br><br><a class="read-more" href="'+permalink+'">Read More</a>');
       
       /*
       findNodeForLess(full_node).append(' (<a href="#show less content">'+opts.less+'</a>)');

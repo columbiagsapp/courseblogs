@@ -75,7 +75,15 @@
 	<script type="text/javascript">
 		$(document).ready(function() {
 
-
+			var MAX_CAPTION_LENGTH = 400;
+			var MAX_TEXTPOST_LENGTH = 500;
+			var MAX_QUOTEPOST_LENGTH = 200;
+			
+			
+			$('.brickwall .caption').truncate({max_length: MAX_CAPTION_LENGTH});
+	    	$('.brickwall .text-body').truncate({max_length: MAX_TEXTPOST_LENGTH});
+	      	$('.brickwall .post.quote .realpost').truncate({max_length: MAX_QUOTEPOST_LENGTH});
+		    
 
 
 
@@ -85,7 +93,7 @@
 				$container.masonry({
 					itemSelector: '.postwrapper',
 					columnWidth: 250,
-					gutterWidth: 40,
+					gutterWidth: 50,
 					isAnimated: false,
 					isFitWidth: true
 				});
@@ -104,12 +112,19 @@
 				function( newElements ) {
 				// hide new items while they are loading
 					var $newElems = $( newElements ).css({ opacity: 0 });
+
+					$newElems.find('.caption').truncate({max_length: MAX_CAPTION_LENGTH});
+	    			$newElems.find('.text-body').truncate({max_length: MAX_TEXTPOST_LENGTH});
+	      			$newElems.find('.post.quote .realpost').truncate({max_length: MAX_QUOTEPOST_LENGTH});
+
+					//$newElems.truncation();
 					// ensure that images load before adding to masonry layout
 					$newElems.imagesLoaded(function(){
 					// show elems now they're ready
 						$newElems.animate({ opacity: 1 });
 						$container.masonry( 'appended', $newElems, true ); 
 					});
+
 				}
 			);
 
@@ -180,9 +195,8 @@
     {block:Posts}
 	<div class="postwrapper">
 
-		{block:More}
-		 <a href='{Permalink}' title='{lang:Read More}'>{lang:Read More}</a>
-		{/block:More}
+		<a href='{Permalink}' class="hidden-permalink">{lang:Read More}</a>
+		
 		
 		
 		{block:Link}
@@ -303,7 +317,7 @@
 		<div class="post text">
 		  <div class="realpost">
 			{block:Title}<h2><a href="{Permalink}">{Title}</a></h2>{/block:Title}
-			{Body}
+			<div class="text-body">{Body}</div>
 		  </div>
 		</div>{/block:Text}
 		
@@ -400,7 +414,7 @@
     {/block:IfDisqusShortname}
 
     {block:Pagination}
-    	{block:NextPage}<div id="page-nav"><a href="{NextPage}" target="_self">Next</a></div>{/block:NextPage}
+    	{block:NextPage}<div id="page-nav"><a href="{NextPage}" target="_self">Next Page</a></div>{/block:NextPage}
 	{/block:Pagination}
 	</div><!-- /#main -->
   </body>
