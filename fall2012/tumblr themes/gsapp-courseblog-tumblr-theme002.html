@@ -68,22 +68,54 @@
     {/block:IfUseMultiColumnLayout}
 	<script type="text/javascript" src="http://www.columbia.edu/cu/arch/tumblr/fall2012/js/arrow_top.js"></script>
 	<script type="text/javascript" src="http://www.columbia.edu/cu/arch/tumblr/fall2012/js/truncator.js"></script>
-	<script type="text/javascript" src="http://www.columbia.edu/cu/arch/tumblr/fall2012/js/autopager.js"></script>
+	<script type="text/javascript" src="http://www.columbia.edu/cu/arch/tumblr/fall2012/js/jquery.infinitescroll.min.js"></script>
 	<script type="text/javascript" src="http://www.columbia.edu/cu/arch/tumblr/fall2012/js/gsappwork.js"></script>
 	
 	{block:IfUseMultiColumnLayout}
 	<script type="text/javascript">
 		$(document).ready(function() {
+
+
+
+
+
 			var $container = $('#main .brickwall');
+
 			$container.imagesLoaded( function(){
 				$container.masonry({
 					itemSelector: '.postwrapper',
 					columnWidth: 250,
+					gutterWidth: 40,
 					isAnimated: false,
-					gutterWidth: 20,
 					isFitWidth: true
 				});
 			});
+
+			$container.infinitescroll({
+				navSelector  : '#page-nav',    // selector for the paged navigation 
+				nextSelector : '#page-nav a',  // selector for the NEXT link (to page 2)
+				itemSelector : '.postwrapper',     // selector for all items you'll retrieve
+				loading: {
+					finishedMsg: 'No more pages to load.',
+					img: 'http://i.imgur.com/6RMhx.gif'
+					}
+				},
+				// trigger Masonry as a callback
+				function( newElements ) {
+				// hide new items while they are loading
+					var $newElems = $( newElements ).css({ opacity: 0 });
+					// ensure that images load before adding to masonry layout
+					$newElems.imagesLoaded(function(){
+					// show elems now they're ready
+						$newElems.animate({ opacity: 1 });
+						$container.masonry( 'appended', $newElems, true ); 
+					});
+				}
+			);
+
+
+
+
 		});
 	</script>
 
@@ -247,7 +279,7 @@
 					<img src="{PhotoURL-250}" width="250" alt="{PhotoAlt}"/>
 				{/block:IfUseMultiColumnLayout}
 				{block:IfNotUseMultiColumnLayout}
-					<img src="{PhotoURL-HighRes}" width="500" alt="{PhotoAlt}"/>
+					<img src="{PhotoURL-HighRes}" width="700" alt="{PhotoAlt}"/>
 				{/block:IfNotUseMultiColumnLayout}
 			{LinkCloseTag}
 		  </div>
@@ -303,11 +335,13 @@
 		 {/block:Date}
 			 
 			 
-	</div><!-- .postwrapper --> 
+	</div><!-- /.postwrapper --> 
     {/block:Posts}
     
    	
-   	</div>
+   	</div><!-- /.brickwall -->
+
+
 
     
     
@@ -364,6 +398,10 @@
             //]]>
         </script>
     {/block:IfDisqusShortname}
-	</div>
+
+    {block:Pagination}
+    	{block:NextPage}<div id="page-nav"><a href="{NextPage}" target="_self">Next</a></div>{/block:NextPage}
+	{/block:Pagination}
+	</div><!-- /#main -->
   </body>
 </html>
