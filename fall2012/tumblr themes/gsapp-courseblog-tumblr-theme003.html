@@ -69,70 +69,10 @@
     <script type="text/javascript" src="http://www.columbia.edu/cu/arch/tumblr/fall2012/js/arrow_top.js"></script>
 	<script type="text/javascript" src="http://www.columbia.edu/cu/arch/tumblr/fall2012/js/truncator.js"></script>
 	<script type="text/javascript" src="http://www.columbia.edu/cu/arch/tumblr/fall2012/js/jquery.infinitescroll.min.js"></script>
-	<script type="text/javascript" src="http://www.columbia.edu/cu/arch/tumblr/fall2012/js/gsappwork.js"></script>
+	
 	
 	{block:IfUseMultiColumnLayout}
-	<script type="text/javascript">
-		$(document).ready(function() {
-
-			var MAX_CAPTION_LENGTH = 400;
-			var MAX_TEXTPOST_LENGTH = 500;
-			var MAX_QUOTEPOST_LENGTH = 200;
-			
-			
-			$('.brickwall .caption').truncate({max_length: MAX_CAPTION_LENGTH});
-	    	$('.brickwall .text-body').truncate({max_length: MAX_TEXTPOST_LENGTH});
-	      	$('.brickwall .post.quote .realpost').truncate({max_length: MAX_QUOTEPOST_LENGTH});
-		    
-
-
-
-			var $container = $('#main .brickwall');
-
-			$container.imagesLoaded( function(){
-				$container.masonry({
-					itemSelector: '.postwrapper',
-					columnWidth: 250,
-					gutterWidth: 50,
-					isAnimated: false,
-					isFitWidth: true
-				});
-			});
-
-			$container.infinitescroll({
-				navSelector  : '#page-nav',    // selector for the paged navigation 
-				nextSelector : '#page-nav a',  // selector for the NEXT link (to page 2)
-				itemSelector : '.postwrapper',     // selector for all items you'll retrieve
-				loading: {
-					finishedMsg: 'No more pages to load.',
-					img: 'http://i.imgur.com/6RMhx.gif'
-					}
-				},
-				// trigger Masonry as a callback
-				function( newElements ) {
-				// hide new items while they are loading
-					var $newElems = $( newElements ).css({ opacity: 0 });
-
-					$newElems.find('.caption').truncate({max_length: MAX_CAPTION_LENGTH});
-	    			$newElems.find('.text-body').truncate({max_length: MAX_TEXTPOST_LENGTH});
-	      			$newElems.find('.post.quote .realpost').truncate({max_length: MAX_QUOTEPOST_LENGTH});
-
-					//$newElems.truncation();
-					// ensure that images load before adding to masonry layout
-					$newElems.imagesLoaded(function(){
-					// show elems now they're ready
-						$newElems.animate({ opacity: 1 });
-						$container.masonry( 'appended', $newElems, true ); 
-					});
-
-				}
-			);
-
-
-
-
-		});
-	</script>
+	<script type="text/javascript" src="http://www.columbia.edu/cu/arch/tumblr/fall2012/js/gsappwork.js"></script>
 
 	{/block:IfUseMultiColumnLayout}
 

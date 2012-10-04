@@ -1,30 +1,51 @@
 $(document).ready(function () {
-	var s = "<p>Hello World!</p><p>By Mars</p>";
-						var o = $(s);
-						var text = o.text();
-						console.log('troy: ' + text);
-
 	var MAX_CAPTION_LENGTH = 400;
 	var MAX_TEXTPOST_LENGTH = 500;
 	var MAX_QUOTEPOST_LENGTH = 200;
-
-	var POSTS = 10;
 	
-	var truncate = function(){
-      $('body:not(.permalink-page) .caption').truncate({max_length: MAX_CAPTION_LENGTH});
-      $('body:not(.permalink-page) .text-body').truncate({max_length: MAX_TEXTPOST_LENGTH});
-      $('body:not(.permalink-page) .post.quote .realpost').truncate({max_length: MAX_QUOTEPOST_LENGTH});
-    }
-    
-    truncate(false);
-    
-    $(window).bind("load", function() {
-    	console.log('LOADED');
-		$(document).bind('DOMNodeInserted', function(){
-			console.log('DOMNodeInserted');
-			//truncate(true);
+	$.fn.trunc = function(){
+		$(this).find('.caption').truncate({max_length: MAX_CAPTION_LENGTH});
+		$(this).find('.text-body').truncate({max_length: MAX_TEXTPOST_LENGTH});
+	  	$(this).find('.post.quote .realpost').truncate({max_length: MAX_QUOTEPOST_LENGTH});
+	}
+
+	$('.brickwall').trunc();
+
+	var $container = $('#main .brickwall');
+
+	$container.imagesLoaded( function(){
+		$container.masonry({
+			itemSelector: '.postwrapper',
+			columnWidth: 250,
+			gutterWidth: 50,
+			isAnimated: false,
+			isFitWidth: true
 		});
 	});
-	
 
+	$container.infinitescroll({
+		navSelector  : '#page-nav',    // selector for the paged navigation 
+		nextSelector : '#page-nav a',  // selector for the NEXT link (to page 2)
+		itemSelector : '.postwrapper',     // selector for all items you'll retrieve
+		loading: {
+			finishedMsg: 'No more pages to load.',
+			img: 'http://i.imgur.com/6RMhx.gif'
+			}
+		},
+		// trigger Masonry as a callback
+		function( newElements ) {
+		// hide new items while they are loading
+			var $newElems = $( newElements ).css({ opacity: 0 });
+
+			$newElems.trunc();
+
+			//$newElems.truncation();
+			// ensure that images load before adding to masonry layout
+			$newElems.imagesLoaded(function(){
+			// show elems now they're ready
+				$newElems.animate({ opacity: 1 });
+				$container.masonry( 'appended', $newElems, true ); 
+			});
+		}
+	);
 });
