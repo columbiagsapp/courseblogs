@@ -72,9 +72,12 @@
 	
 	
 	{block:IfUseMultiColumnLayout}
-	<script type="text/javascript" src="http://www.columbia.edu/cu/arch/tumblr/fall2012/js/gsappwork.js"></script>
-
+	<script type="text/javascript" src="http://www.columbia.edu/cu/arch/tumblr/fall2012/js/gsappworkmulticolumn.js"></script>
 	{/block:IfUseMultiColumnLayout}
+
+	{block:IfNotUseMultiColumnLayout}
+	<script type="text/javascript" src="http://www.columbia.edu/cu/arch/tumblr/fall2012/js/gsappworklist.js"></script>
+	{/block:IfNotUseMultiColumnLayout}
 
   </head> 
   
