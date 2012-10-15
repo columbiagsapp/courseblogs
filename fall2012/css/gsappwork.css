@@ -369,7 +369,7 @@ html[xmlns] .clearfix {
     }
 
     div.text img {
-      max-width: 800px
+      max-width: 100%
     }
     div.text blockquote img {
       max-width: 150px
