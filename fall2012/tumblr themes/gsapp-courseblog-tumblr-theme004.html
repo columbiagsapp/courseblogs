@@ -70,7 +70,7 @@
     <script type="text/javascript" src="http://www.columbia.edu/cu/arch/tumblr/fall2012/js/arrow_top.js"></script>
     <script type="text/javascript" src="http://www.columbia.edu/cu/arch/tumblr/fall2012/js/truncator.js"></script>
 	<script type="text/javascript" src="http://www.columbia.edu/cu/arch/tumblr/fall2012/js/jquery.infinitescroll.min.js"></script>
-	<script type="text/javascript" src="http://www.columbia.edu/cu/arch/tumblr/fall2012/js/ajaxify-nav.js"></script>
+	<script type="text/javascript" src="http://www.columbia.edu/cu/arch/tumblr/fall2012/js/gsappworkshared.js"></script>
 	
 	{block:IfUseMultiColumnLayout}
 	<script type="text/javascript" src="http://www.columbia.edu/cu/arch/tumblr/fall2012/js/gsappworkmulticolumn.js"></script>
@@ -85,15 +85,15 @@
 
   <body{block:PermalinkPage} class="permalink-page"{/block:PermalinkPage}> 
   
-  
-
-  <div id="header">
-  	<div  class="clearfix">
-	<a id="logo" href="/"><img src="http://www.columbia.edu/cu/arch/tumblr/gsapp_logo.png"></a>
-	<a id="headertitle" href="/"><h1>{Description}</h1></a>
-	<a id="headertitle" href="/"><h1>{text:Studio Title}<h1></a>
-</div>
-</div> 
+	<div id="header">
+	  	<div class="clearfix">
+			<a id="logo" href="/"><img src="http://www.columbia.edu/cu/arch/tumblr/gsapp_logo.png"></a>
+			<div id="headertitle-container">
+				<a class="headertitle" href="/"><h1>{Description}</h1></a>
+				<a class="headertitle" href="/"><h1>{text:Studio Title}<h1></a>
+			</div>
+		</div>
+	</div> 
 
   <div id="wrapper">  
 	    
