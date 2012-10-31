@@ -285,10 +285,27 @@
 	  </div>
 			
 	  <a href="{ReblogURL}">&#8634;  Reblog</a>
+	  {block:PostNotes}{PostNotes}{/block:PostNotes}
+
+	  
 	<br />  
 		  </div>
 		</div>  
 		 {/block:Date}
+
+
+
+		 {block:IfDisqusShortname}
+      {block:Permalink}
+      <div id="disqus_thread">
+      <script type="text/javascript" src="http://disqus.com/forums/{text:Disqus Shortname}/embed.js"></script>
+      <noscript><a href="http://{text:Disqus Shortname}.disqus.com/?url=ref">{lang:View the discussion thread}</a></noscript>
+      <p id="powered-by-disqus">{lang:Blog comments powered by Disqus 2}</p>
+      </div>
+      {/block:Permalink}
+    {/block:IfDisqusShortname}
+    
+    
 			 
 			 
 	</div><!-- /.postwrapper --> 
@@ -302,17 +319,7 @@
     
     
     
-    {block:IfDisqusShortname}
-      {block:Permalink}
-      <div id="disqus_thread">
-      <script type="text/javascript" src="http://disqus.com/forums/{text:Disqus Shortname}/embed.js"></script>
-      <noscript><a href="http://{text:Disqus Shortname}.disqus.com/?url=ref">{lang:View the discussion thread}</a></noscript>
-      <p id="powered-by-disqus">{lang:Blog comments powered by Disqus 2}</p>
-      </div>
-      {/block:Permalink}
-    {/block:IfDisqusShortname}
     
-    {PostNotes}
     
     
  <!-- 
