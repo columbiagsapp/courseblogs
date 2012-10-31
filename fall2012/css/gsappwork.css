@@ -414,7 +414,7 @@ html[xmlns] .clearfix {
         font-size: 12px;
         font-family: 'Courier New', Courier, monospace;
         list-style-type: none;
-        margin: 0 0 70px 130px;
+        margin: 0;
     }
         ol.notes img {
             display: none;
