@@ -395,6 +395,17 @@ html[xmlns] .clearfix {
       line-height: 1.25;
     }
 
+    .permalink-page .realpost img,
+    .permalink-page .text embed,
+    .permalink-page .text iframe,
+    .permalink-page .text object,
+    .permalink-page .link img,
+    .permalink-page .link embed,
+    .permalink-page .link iframe,
+    .permalink-page link object {
+      width: 700px;
+    }
+
     .text img,
     .text embed,
     .text iframe,
@@ -402,9 +413,10 @@ html[xmlns] .clearfix {
     .link img,
     .link embed,
     .link iframe,
-    .link object {
-      width: 100%;
+    link object {
+      width: 250px;
     }
+
     .text blockquote img {
       max-width: 150px
     }
