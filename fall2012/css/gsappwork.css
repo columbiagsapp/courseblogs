@@ -80,6 +80,10 @@ body {
     border: none; 
 
     }
+
+    .postwrapper{
+      overflow:hidden;
+    }
     
     .text.post blockquote, .post.quote blockquote, blockquote {  
       margin-left: -30px; 
