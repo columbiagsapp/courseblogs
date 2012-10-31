@@ -121,11 +121,16 @@ body {
       	overflow: auto;
     }
 
+    #mainnav{
+      float:left;
+    }
+
     #subnav{
       overflow: auto;
       clear: both;
       font-size: 12px;
       font-weight: bold;
+      float:left;
     }
     
     .headlink {
