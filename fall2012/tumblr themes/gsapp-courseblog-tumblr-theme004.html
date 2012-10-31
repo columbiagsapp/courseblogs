@@ -201,12 +201,20 @@
 	   {block:Photoset}
 		<div class="post photoset">
 			<div class="realpost">
-				{block:IfUseMultiColumnLayout}
-					{Photoset-250}
-				{/block:IfUseMultiColumnLayout}
-				{block:IfNotUseMultiColumnLayout}
-					{Photoset-700}
-				{/block:IfNotUseMultiColumnLayout}
+
+				{block:Permalink}
+					{block:Photos}
+						<img src="{PhotoURL-HighRes}" width="700" alt="{PhotoAlt}"/>
+					{/block:Photos}
+				{/block:Permalink}
+				{block:IndexPage} 
+					{block:IfUseMultiColumnLayout}
+						{Photoset-250}
+					{/block:IfUseMultiColumnLayout}
+					{block:IfNotUseMultiColumnLayout}
+						{Photoset-700}
+					{/block:IfNotUseMultiColumnLayout}
+				{/block:IndexPage} 
 			</div>	
 		</div>
 		{/block:Photoset}    
@@ -234,14 +242,20 @@
 		{block:Photo}
 		<div class="post photo">
 		  <div class="realpost">
-			{LinkOpenTag}
-				{block:IfUseMultiColumnLayout}
-					<img src="{PhotoURL-250}" width="250" alt="{PhotoAlt}"/>
-				{/block:IfUseMultiColumnLayout}
-				{block:IfNotUseMultiColumnLayout}
-					<img src="{PhotoURL-HighRes}" width="700" alt="{PhotoAlt}"/>
-				{/block:IfNotUseMultiColumnLayout}
-			{LinkCloseTag}
+		  	{block:Permalink}
+		  		<img src="{PhotoURL-HighRes}" width="700" alt="{PhotoAlt}"/>
+		  	{/block:Permalink}
+
+		  	{block:IndexPage} 
+				{LinkOpenTag}
+					{block:IfUseMultiColumnLayout}
+						<img src="{PhotoURL-250}" width="250" alt="{PhotoAlt}"/>
+					{/block:IfUseMultiColumnLayout}
+					{block:IfNotUseMultiColumnLayout}
+						<img src="{PhotoURL-HighRes}" width="700" alt="{PhotoAlt}"/>
+					{/block:IfNotUseMultiColumnLayout}
+				{LinkCloseTag}
+			{/block:IndexPage} 
 		  </div>
 		</div>{/block:Photo}
 		
@@ -287,7 +301,7 @@
 	  <a href="{ReblogURL}">&#8634;  Reblog</a>
 	  {block:PostNotes}{PostNotes}{/block:PostNotes}
 
-	  
+
 	<br />  
 		  </div>
 		</div>  
