@@ -128,9 +128,13 @@ body {
       font-weight: bold;
     }
     
-    #headlink {
+    .headlink {
     	float: left;
     	margin-right: 15px;
+    }
+
+    #nav .headlink .active{
+      border-bottom:1px solid;
     }
     
     #logo, #logo a{
@@ -142,6 +146,14 @@ body {
 		float: left;
 		margin: 0 0 0 25px;
 	}
+
+  #ajax{
+    display: none;
+    max-width: 700px;
+    padding-bottom:30px;
+    margin-right: 25px;
+    font: bold 21px/25px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  }
 
   #main {
       margin: 0 auto;
