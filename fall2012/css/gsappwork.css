@@ -83,6 +83,7 @@ body {
 
     .postwrapper{
       overflow:hidden;
+      word-wrap: break-word;
     }
     
     .text.post blockquote, .post.quote blockquote, blockquote {  
@@ -419,6 +420,7 @@ html[xmlns] .clearfix {
     .link iframe,
     link object {
       width: 250px;
+      height: auto;
     }
 
     .text blockquote img {
