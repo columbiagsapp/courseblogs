@@ -13,7 +13,7 @@
 ### Customize Theme
 4. From the dashboard, click the settings gear at the top.
 5. Select your tumblr account from the left.
-6. Select "Change Avatar", and upload the provided GSAPP Icon.
+6. Select "Change Avatar", and upload the provided [GSAPP Icon](https://github.com/columbiagsapp/courseblogs/blob/master/assets/avatar.png).
 7. Under "Theme", click "Customize"
 8. In a separate tab, open: [GSAPP_minimal.html](https://github.com/columbiagsapp/courseblogs/blob/master/themes/GSAPP_minimal.html) , and copy the text from the file.
 9. Go back to the tumblr customize page, and on the left, select "Edit Html".
