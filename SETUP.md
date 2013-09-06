@@ -1,14 +1,16 @@
-# Steps for setting up GSAPP Course Tumblr Pages
+# Steps to set up GSAPP Course Tumblrs
 
 
 
-
+### Create Tumblr Page
 1. Log on to Master Tumblr Account.
 2. On upper right of dashboard, select "Create a New Blog" from drop-down menu.
 3. Enter Course information.
   * For "Title" enter Critic's name followed by Semester. *ex: Rothstein Fa13*
   * Under "URL" enter course type, followed by Critic's name and semester, separated only by dashes. *ex:studio-rothstein-fa13.tumblr.com"
 4. Click "Create Blog"  
+
+### Customize Theme
 4. From the dashboard, click the settings gear at the top.
 5. Select your tumblr account from the left.
 6. Select "Change Avatar", and upload the provided GSAPP Icon.
@@ -18,5 +20,8 @@
 10. In the new expanded page on the left, select all the text, delete, and paste the copied template .html file.
 11. On the left, under "Description", enter the course title. If a grid layout is preferred, select "Use Multi Column Layout" on the left.
 12. Click save and close.
+
+
+### Add Members
 13. From the tumblr dashboard, select your tumblr account. On the right side, click Members, and then input the student emails to send invites.
 
