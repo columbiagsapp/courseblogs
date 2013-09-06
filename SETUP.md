@@ -3,7 +3,7 @@
 
 
 ### Create Tumblr Page
-1. Log on to Master Tumblr Account.
+1. From [Tumblr.com](http://www.tumblr.com), log in to master Tumblr Account.
 2. On upper right of dashboard, select "Create a New Blog" from drop-down menu.
 3. Enter Course information.
   * For "Title" enter Critic's name followed by Semester. *ex: Rothstein Fa13*
