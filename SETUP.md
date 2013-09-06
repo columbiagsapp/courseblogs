@@ -4,14 +4,14 @@
 
 ### Create Tumblr Page
 1. From [Tumblr.com](http://www.tumblr.com), log in to master Tumblr Account.
-2. On upper right of dashboard, select "Create a New Blog" from drop-down menu.
+2. On upper right of [Tumblr dashboard](http://www.tumblr.com/dashboard), select "Create a New Blog" from drop-down menu.
 3. Enter Course information.
   * For "Title" enter Critic's name followed by Semester. *ex: Rothstein Fa13*
   * Under "URL" enter course type, followed by Critic's name and semester, separated only by dashes. *ex:studio-rothstein-fa13.tumblr.com"*
 4. Click "Create Blog"  
 
 ### Customize Theme
-4. From the dashboard, go to the [Settings Page](https://www.tumblr.com/settings) by clicking the settings gear at the top.
+4. From the [Tumblr dashboard](http://www.tumblr.com/dashboard), go to the [Settings Page](https://www.tumblr.com/settings) by clicking the settings gear at the top.
 5. Select your tumblr account from the left.
 6. Select "Change Avatar", and upload the provided [GSAPP Icon](https://github.com/columbiagsapp/courseblogs/blob/master/assets/avatar.png).
 7. Under "Theme", click "Customize"
@@ -23,5 +23,5 @@
 
 
 ### Add Members
-13. From the tumblr dashboard, select your tumblr account. On the right side, click Members, and then input the student emails to send invites.
+13. From the [Tumblr dashboard](http://www.tumblr.com/dashboard), select your tumblr account. On the right side, click Members, and then input the student emails to send invites.
 
