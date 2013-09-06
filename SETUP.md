@@ -11,7 +11,7 @@
 4. Click "Create Blog"  
 
 ### Customize Theme
-4. From the dashboard, click the settings gear at the top.
+4. From the dashboard, go to the [Settings Page](https://www.tumblr.com/settings) by clicking the settings gear at the top.
 5. Select your tumblr account from the left.
 6. Select "Change Avatar", and upload the provided [GSAPP Icon](https://github.com/columbiagsapp/courseblogs/blob/master/assets/avatar.png).
 7. Under "Theme", click "Customize"
