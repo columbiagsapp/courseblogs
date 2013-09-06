@@ -10,8 +10,9 @@
 
     <meta name="text:Disqus Shortname" content="" />
     <meta name="if:Use multi column layout" content="0"/> 
+    <meta name="text:Studio Title" content="" />
 
-    <link type="text/css" rel="stylesheet" media="all" href="http://www.columbia.edu/cu/arch/tumblr/fall2012/css/gsappwork.css">
+    <link type="text/css" rel="stylesheet" media="all" href="http://www.columbia.edu/cu/arch/tumblr/css/gsapp_minimal.css">
 
     <style>
     /* Styling based on Tumblr customizable inputs */
@@ -64,19 +65,19 @@
     
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
     {block:IfUseMultiColumnLayout}
-        <script type="text/javascript" src="http://www.columbia.edu/cu/arch/tumblr/fall2012/js/jquery.masonry.min.js"></script>
+        <script type="text/javascript" src="http://www.columbia.edu/cu/arch/tumblr/js/jquery.masonry.min.js"></script>
     {/block:IfUseMultiColumnLayout}
-    <script type="text/javascript" src="http://www.columbia.edu/cu/arch/tumblr/fall2012/js/arrow_top.js"></script>
-	<script type="text/javascript" src="http://www.columbia.edu/cu/arch/tumblr/fall2012/js/truncator.js"></script>
-	<script type="text/javascript" src="http://www.columbia.edu/cu/arch/tumblr/fall2012/js/jquery.infinitescroll.min.js"></script>
-	
+    <script type="text/javascript" src="http://www.columbia.edu/cu/arch/tumblr/js/arrow_top.js"></script>
+    <script type="text/javascript" src="http://www.columbia.edu/cu/arch/tumblr/js/truncator.js"></script>
+    <script type="text/javascript" src="http://www.columbia.edu/cu/arch/tumblr/js/jquery.infinitescroll.min.js"></script>
+	<script type="text/javascript" src="http://www.columbia.edu/cu/arch/tumblr/js/gsappworkshared.js"></script>
 	
 	{block:IfUseMultiColumnLayout}
-	<script type="text/javascript" src="http://www.columbia.edu/cu/arch/tumblr/fall2012/js/gsappworkmulticolumn.js"></script>
+	<script type="text/javascript" src="http://www.columbia.edu/cu/arch/tumblr/js/gsappworkmulticolumn.js"></script>
 	{/block:IfUseMultiColumnLayout}
 
 	{block:IfNotUseMultiColumnLayout}
-	<script type="text/javascript" src="http://www.columbia.edu/cu/arch/tumblr/fall2012/js/gsappworklist.js"></script>
+	<script type="text/javascript" src="http://www.columbia.edu/cu/arch/tumblr/js/gsappworklist.js"></script>
 	{/block:IfNotUseMultiColumnLayout}
 
   </head> 
@@ -84,15 +85,15 @@
 
   <body{block:PermalinkPage} class="permalink-page"{/block:PermalinkPage}> 
   
-  
-
-  <div id="header">
-  	<div  class="clearfix">
-	<a id="logo" href="/"><img src="http://www.columbia.edu/cu/arch/tumblr/gsapp_logo.png"></a>
-	<a id="headertitle" href="/"><h1>{Description}</h1></a>
-	<a id="headertitle" href="/"><h1>Rothstein Studio Fall 2013<h1></a>
-</div>
-</div> 
+	<div id="header">
+	  	<div class="clearfix">
+			<a id="logo" href="/"><img src="http://www.columbia.edu/cu/arch/tumblr/gsapp_logo.png"></a>
+			<div id="headertitle-container">
+				<a class="headertitle" href="/"><h1>{Description}</h1></a>
+				<a class="headertitle" href="/"><h1>{text:Studio Title}<h1></a>
+			</div>
+		</div>
+	</div> 
 
   <div id="wrapper">  
 	    
@@ -100,13 +101,15 @@
         
         <!-- Automatically Show Tumblr Pages, Ask & Submissions-->
         
-            {block:HasPages}
-            {block:Pages}<div id="headlink"><h2><a href="{URL}">{Label}</a></h2></div>{/block:Pages}
-            {/block:HasPages}
-            <div id="headlink"><h2><a href="/archive">Archive</a></h2></div>
-            <div id="headlink"><h2><a href="/rss">RSS</a></h2></div>
+        {block:HasPages}
+        {block:Pages}<div class="headlink ajaxpage"><h2><a href="{URL}">{Label}</a></h2></div>{/block:Pages}
+        {/block:HasPages}
+        <div class="headlink"><h2><a href="/archive">Archive</a></h2></div>
+        <div class="headlink"><h2><a href="/rss">RSS</a></h2></div>
     
-  </div>
+  	</div><!-- /#nav -->
+
+  	<div id="ajax"></div><!-- /#ajax -->
   
   
   
@@ -198,12 +201,20 @@
 	   {block:Photoset}
 		<div class="post photoset">
 			<div class="realpost">
-				{block:IfUseMultiColumnLayout}
-					{Photoset-250}
-				{/block:IfUseMultiColumnLayout}
-				{block:IfNotUseMultiColumnLayout}
-					{Photoset-700}
-				{/block:IfNotUseMultiColumnLayout}
+
+				{block:Permalink}
+					{block:Photos}
+						<img src="{PhotoURL-HighRes}" width="700" alt="{PhotoAlt}"/>
+					{/block:Photos}
+				{/block:Permalink}
+				{block:IndexPage} 
+					{block:IfUseMultiColumnLayout}
+						{Photoset-250}
+					{/block:IfUseMultiColumnLayout}
+					{block:IfNotUseMultiColumnLayout}
+						{Photoset-700}
+					{/block:IfNotUseMultiColumnLayout}
+				{/block:IndexPage} 
 			</div>	
 		</div>
 		{/block:Photoset}    
@@ -231,14 +242,20 @@
 		{block:Photo}
 		<div class="post photo">
 		  <div class="realpost">
-			{LinkOpenTag}
-				{block:IfUseMultiColumnLayout}
-					<img src="{PhotoURL-250}" width="250" alt="{PhotoAlt}"/>
-				{/block:IfUseMultiColumnLayout}
-				{block:IfNotUseMultiColumnLayout}
-					<img src="{PhotoURL-HighRes}" width="700" alt="{PhotoAlt}"/>
-				{/block:IfNotUseMultiColumnLayout}
-			{LinkCloseTag}
+		  	{block:Permalink}
+		  		<img src="{PhotoURL-HighRes}" width="700" alt="{PhotoAlt}"/>
+		  	{/block:Permalink}
+
+		  	{block:IndexPage} 
+				{LinkOpenTag}
+					{block:IfUseMultiColumnLayout}
+						<img src="{PhotoURL-250}" width="250" alt="{PhotoAlt}"/>
+					{/block:IfUseMultiColumnLayout}
+					{block:IfNotUseMultiColumnLayout}
+						<img src="{PhotoURL-HighRes}" width="700" alt="{PhotoAlt}"/>
+					{/block:IfNotUseMultiColumnLayout}
+				{LinkCloseTag}
+			{/block:IndexPage} 
 		  </div>
 		</div>{/block:Photo}
 		
@@ -280,16 +297,29 @@
 	  {/block:Tags}<br />
 	 {/block:HasTags}
 	  </div>
-	   
-			  {block:IfDisqusShortName}{block:IfShowCommentCountOnFrontpage}<a href="{Permalink}#disqus_thread"></a><br />
-			  {/block:IfShowCommentCountOnFrontpage}{/block:IfDisqusShortName}{NoteCountWithLabel}<br />
-			  
-	
+			
 	  <a href="{ReblogURL}">&#8634;  Reblog</a>
+	  {block:PostNotes}{PostNotes}{/block:PostNotes}
+
+
 	<br />  
 		  </div>
 		</div>  
 		 {/block:Date}
+
+
+
+		 {block:IfDisqusShortname}
+      {block:Permalink}
+      <div id="disqus_thread">
+      <script type="text/javascript" src="http://disqus.com/forums/{text:Disqus Shortname}/embed.js"></script>
+      <noscript><a href="http://{text:Disqus Shortname}.disqus.com/?url=ref">{lang:View the discussion thread}</a></noscript>
+      <p id="powered-by-disqus">{lang:Blog comments powered by Disqus 2}</p>
+      </div>
+      {/block:Permalink}
+    {/block:IfDisqusShortname}
+    
+    
 			 
 			 
 	</div><!-- /.postwrapper --> 
@@ -303,17 +333,7 @@
     
     
     
-    {block:IfDisqusShortname}
-      {block:Permalink}
-      <div id="disqus_thread">
-      <script type="text/javascript" src="http://disqus.com/forums/{text:Disqus Shortname}/embed.js"></script>
-      <noscript><a href="http://{text:Disqus Shortname}.disqus.com/?url=ref">{lang:View the discussion thread}</a></noscript>
-      <p id="powered-by-disqus">{lang:Blog comments powered by Disqus 2}</p>
-      </div>
-      {/block:Permalink}
-    {/block:IfDisqusShortname}
     
-    {PostNotes}
     
     
  <!-- 
