@@ -26,3 +26,10 @@
 ### Add Members
 1. From the [Tumblr dashboard](http://www.tumblr.com/dashboard), select your tumblr account. On the right side, click Members, and then input the student emails to send invites.
 
+
+
+### Naming Conventions
+
+ **Studio:** 
+ studio-criticlastname-termYear  
+ *ex: studio-rothstein-fa13.tumblr.com*
