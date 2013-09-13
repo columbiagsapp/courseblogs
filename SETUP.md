@@ -19,7 +19,7 @@
 6. In a separate tab, open: [GSAPP_minimal.html](https://github.com/columbiagsapp/courseblogs/blob/master/themes/GSAPP_minimal.html) , and copy the text from the file.
 7. Go back to the tumblr customize page, and on the left, select "Edit Html".
 8. In the new expanded page on the left, select all the text, delete, and paste the copied template .html file.
-9. On the left, under "Description", enter the course title. If a grid layout is preferred, select "Use Multi Column Layout" on the left.
+9. On the left, click "Appearance" on the top left to close the html editor". Under "Studio Title" enter the studio critic followed by term and year: *Rothstein Studio Fall 2013* Under "Description", enter the course title. If a grid layout is preferred, select "Use Multi Column Layout" on the left.
 10. Click save and close.
 
 
