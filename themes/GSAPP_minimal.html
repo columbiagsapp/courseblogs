@@ -9,12 +9,12 @@
     <!-- Default values -->
 
     <meta name="text:Disqus Shortname" content="" />
-    <meta name="if:Use multi column layout" content="0"/> 
+    <meta name="if:Use multi column layout" content="0" /> 
     <meta name="text:Studio Title" content="" />
 
-    <link type="text/css" rel="stylesheet" media="all" href="http://www.columbia.edu/cu/arch/tumblr/css/gsapp_minimal.css">
+    <link type="text/css" rel="stylesheet" media="all" href="http://www.columbia.edu/cu/arch/tumblr/css/gsapp_minimal.css" />
 
-    <style>
+    <style type="text/css">
     /* Styling based on Tumblr customizable inputs */
     
     {block:IfDisqusShortname}
@@ -87,7 +87,7 @@
   
 	<div id="header">
 	  	<div class="clearfix">
-			<a id="logo" href="/"><img src="http://www.columbia.edu/cu/arch/tumblr/gsapp_logo.png"></a>
+			<a id="logo" href="/"><img src="http://www.columbia.edu/cu/arch/tumblr/gsapp_logo.png" alt="GSAPP" /></a>
 			<div id="headertitle-container">
 				<a class="headertitle" href="/"><h1>{Description}</h1></a>
 				<a class="headertitle" href="/"><h1>{text:Studio Title}</h1></a>
@@ -380,5 +380,6 @@
     	{block:NextPage}<div id="page-nav"><a href="{NextPage}" target="_self">Next Page</a></div>{/block:NextPage}
 	{/block:Pagination}
 	</div><!-- /#main -->
+	</div><!-- /#wrapper -->
   </body>
 </html>
